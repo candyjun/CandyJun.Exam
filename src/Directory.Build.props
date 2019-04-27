@@ -1,0 +1,8 @@
+﻿<Project>
+  
+  <PropertyGroup>
+    <Version>0.2.0</Version>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+</Project>

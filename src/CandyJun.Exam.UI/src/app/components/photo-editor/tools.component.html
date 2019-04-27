@@ -1,0 +1,14 @@
+<button pButton type="button" icon="fa-lg fa-crop" (click)="cropIt()" [disabled]="disabled" title="剪切"></button>
+<button pButton type="button" icon="fa-lg fa-search-plus" (click)="zoomIn()" [disabled]="disabled" title="放大"></button>
+<button pButton type="button" icon="fa-lg fa-search-minus" (click)="zoomOut()" [disabled]="disabled" title="缩小"></button>
+<button pButton type="button" icon="fa-lg fa-rotate-left" (click)="rotateLeft()" [disabled]="disabled" title="左旋"></button>
+<button pButton type="button" icon="fa-lg fa-rotate-right" (click)="rotateRight()" [disabled]="disabled" title="右旋"></button>
+<button pButton type="button" icon="fa-lg fa-minus" (click)="line()" [disabled]="disabled" title="细线"></button>
+<button pButton type="button" icon="fa-lg fa-window-minimize" (click)="line2x()" [disabled]="disabled" title="粗线"></button>
+<button pButton type="button" icon="fa-lg fa-square-o" (click)="rectangle()" [disabled]="disabled" title="画框"></button>
+<button pButton type="button" icon="fa-lg fa-text-width" (click)="type()" [disabled]="disabled" title="文本"></button>
+<button pButton type="button" icon="fa-lg fa-hand-o-left" (click)="undo()" [disabled]="disabled" title="撤销"></button>
+<button pButton type="button" icon="fa-lg fa-hand-o-right" (click)="redo()" [disabled]="disabled" title="重复"></button>
+<button pButton type="button" icon="fa-lg fa-window-close-o" (click)="clear()" [disabled]="disabled" title="清除图片"></button>
+<button pButton type="button" icon="fa-lg fa-floppy-o" (click)="save()" [disabled]="disabled" title="保存"
+        *ngIf="isShowImgSaveButton"></button>

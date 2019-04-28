@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CandyJun.Exam.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CandyJun.Exam.User
 {
@@ -17,6 +19,22 @@ namespace CandyJun.Exam.User
         public UserService(IBaseRepository<Users> repository)
         {
             _repository = repository;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="openId"></param>
+        /// <returns></returns>
+        public async Task Login(string openId)
+        {
+            var user = await _repository.FirstOrDefaultAsync(f => f.OpenId == openId);
+            if (user == null)
+            {
+                throw new UserFriendlyException(ErrorCode.NotFound, $"{openId}不存在");
+            }
+
+
         }
     }
 }

@@ -6,8 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190428052151_InitializeDatebase.cs" />
+    <Compile Remove="Migrations\20190428052151_InitializeDatebase.Designer.cs" />
+    <Compile Remove="Migrations\20190428053221_InitializeDatebase.cs" />
+    <Compile Remove="Migrations\20190428053221_InitializeDatebase.Designer.cs" />
+    <Compile Remove="Migrations\20190428053701_InitializeDatebase.cs" />
+    <Compile Remove="Migrations\20190428053701_InitializeDatebase.Designer.cs" />
+    <Compile Remove="Migrations\20190428054059_InitializeDatebase.cs" />
+    <Compile Remove="Migrations\20190428054059_InitializeDatebase.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Creekdream.Orm.EntityFrameworkCore" Version="0.2.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -45,12 +45,17 @@ namespace CandyJun.Exam.Api
                     options.Filters.Add(typeof(CustomExceptionFilter));
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            var connectionString = _configuration.GetConnectionString("Default");
+            var csb = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder(connectionString);
+            var maximumPoolSize = (int)csb.MaximumPoolSize;
             services.AddDbContext<DbContextBase, ExamDbContext>(
                 options =>
                 {
-                    options.UseSqlServer(
-                        _configuration.GetConnectionString("Default"),
-                        option => option.UseRowNumberForPaging());
+                    options.UseMySql(connectionString, mySqlOptionsAction =>
+                    {
+                        mySqlOptionsAction.ServerVersion(new Version(5, 6, 16),
+                            Pomelo.EntityFrameworkCore.MySql.Infrastructure.ServerType.MySql);
+                    });
                 });
             services.Configure<ApiBehaviorOptions>(options =>
             {

@@ -61,7 +61,7 @@ namespace CandyJun.Exam.Books
         }
 
         /// <inheritdoc />
-        public async Task<GetBookOutput> Update(Guid id, UpdateBookInput input)
+        public async Task<GetBookOutput> Update(int id, UpdateBookInput input)
         {
             var book = await _bookRepository.GetAsync(id);
             input.MapTo(book);
@@ -70,7 +70,7 @@ namespace CandyJun.Exam.Books
         }
 
         /// <inheritdoc />
-        public async Task Delete(Guid id)
+        public async Task Delete(int id)
         {
             await _bookRepository.DeleteAsync(id);
         }

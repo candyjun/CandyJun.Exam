@@ -1,33 +1,33 @@
-﻿using System;
+﻿using CandyJun.Exam.Dto;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace CandyJun.Exam.Paper
+namespace CandyJun.Exam.Paper.Dto
 {
     /// <summary>
-    /// 试卷题目
+    /// 试卷题目关联输出类
     /// </summary>
-    public class PaperTopics : BaseEntity
+    public class PaperTopicOutput : BaseOutput
     {
         /// <summary>
         /// 试卷Id
         /// </summary>
-        public virtual int PaperId { get; set; }
+        public int PaperId { get; set; }
 
         /// <summary>
         /// 题目Id
         /// </summary>
-        public virtual int TopicId { get; set; }
+        public int TopicId { get; set; }
 
         /// <summary>
         /// 排序
         /// </summary>
-        public virtual int Sort { get; set; }
+        public int Sort { get; set; }
 
         /// <summary>
         /// 分值
         /// </summary>
-        public virtual int Score { get; set; }
+        public int Score { get; set; }
     }
 }

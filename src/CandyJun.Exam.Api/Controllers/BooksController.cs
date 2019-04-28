@@ -51,7 +51,7 @@ namespace CandyJun.Exam.Api.Controllers
         /// 修改书信息
         /// </summary>
         [HttpPut("{id}")]
-        public async Task<GetBookOutput> Put([FromQuery]Guid id, [FromBody]UpdateBookInput input)
+        public async Task<GetBookOutput> Put([FromQuery]int id, [FromBody]UpdateBookInput input)
         {
             return await _bookService.Update(id, input);
         }
@@ -60,7 +60,7 @@ namespace CandyJun.Exam.Api.Controllers
         /// 删除书信息
         /// </summary>
         [HttpDelete]
-        public async Task Delete(Guid id)
+        public async Task Delete(int id)
         {
             await _bookService.Delete(id);
         }

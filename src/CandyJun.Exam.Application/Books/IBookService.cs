@@ -29,12 +29,12 @@ namespace CandyJun.Exam.Books
         /// <summary>
         /// 修改书信息
         /// </summary>
-        Task<GetBookOutput> Update(Guid id, UpdateBookInput input);
+        Task<GetBookOutput> Update(int id, UpdateBookInput input);
 
         /// <summary>
         /// 删除书信息
         /// </summary>
-        Task Delete(Guid id);
+        Task Delete(int id);
     }
 }
 

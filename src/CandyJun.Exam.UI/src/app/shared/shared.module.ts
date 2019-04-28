@@ -13,16 +13,10 @@ import {
     InputTextareaModule,
     InputTextModule
 } from 'primeng/primeng';
-import { SelectItemPipeModule } from '../components/select-item.pipe';
-import { AppComponentWatermarkModule } from '../components/watermark.directive';
 import { MaxValidator, MinValidator } from '../core/validators';
 import { FormModeService } from '../shared/form-mode';
 import { CalendarLocaleService } from './calendar-locale.service';
-import { MenuButtonDirectiveModule } from '../components/menu-button.directive';
-import { ModelStorageService } from './model-storage.service';
-import { ProductSelectModule } from '../components/product-select.component';
-import { TabViewMenuService } from './tab-view-menu.service';
-import { MenuTabPermissionDirectiveModule } from '../components/menu-tab.directive';
+import { ModelStorageService } from 'app/shared/model-storage.service';
 
 @NgModule({
     imports: [
@@ -33,10 +27,6 @@ import { MenuTabPermissionDirectiveModule } from '../components/menu-tab.directi
         InputTextareaModule,
         CheckboxModule,
         DropdownModule,
-        SelectItemPipeModule,
-        MenuButtonDirectiveModule,
-        ProductSelectModule,
-        MenuTabPermissionDirectiveModule
     ],
     declarations: [
         MinValidator,
@@ -47,7 +37,6 @@ import { MenuTabPermissionDirectiveModule } from '../components/menu-tab.directi
         FormModeService,
         CalendarLocaleService,
         ModelStorageService,
-        TabViewMenuService
     ],
     exports: [
         CommonModule,
@@ -61,11 +50,6 @@ import { MenuTabPermissionDirectiveModule } from '../components/menu-tab.directi
         ConfirmDialogModule,
         DialogModule,
         DropdownModule,
-        SelectItemPipeModule,
-        AppComponentWatermarkModule,
-        MenuButtonDirectiveModule,
-        ProductSelectModule,
-        MenuTabPermissionDirectiveModule
     ]
 })
 export class SharedModule {

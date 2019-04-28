@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
-import { MessageService } from './core/message.service';
 import { ModelStorageService } from './shared/model-storage.service';
 
 @Component({
@@ -13,16 +12,10 @@ export class AppComponent {
   public hide: boolean = true;
 
   public constructor(private readonly router: Router,
-    private readonly messageService: MessageService,
     private readonly modelStorageService: ModelStorageService,
     private readonly changeDetectorRef: ChangeDetectorRef) {
     this.modelStorageService.remove();
-    // 通过手动控制loading显示隐藏
-    this.messageService.loadingSubject
-      .subscribe((v: boolean) => {
-        this.hide = v;
-        this.changeDetectorRef.detectChanges();
-      });
+    this.changeDetectorRef.detectChanges();
 
     this.router.events.subscribe((event) => {
       // 在路由开始显示loading
